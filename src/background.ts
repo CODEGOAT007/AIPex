@@ -1,4 +1,5 @@
 import { Storage } from "~/lib/storage"
+import { initWsBridge } from "./ws-bridge"
 
 // Asset URLs for extension resources
 const logoNotion = chrome.runtime.getURL("assets/logo-notion.png")
@@ -2406,3 +2407,6 @@ async function downloadChatImagesInBackground(
 
 // Initialize actions
 resetOmni()
+
+// Initialize WebSocket bridge for MCP server communication
+initWsBridge()
